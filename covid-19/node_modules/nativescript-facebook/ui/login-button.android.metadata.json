@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"LoginButton":{"__symbolic":"class","extends":{"__symbolic":"reference","module":"./login-button.common","name":"LoginButtonBase","line":6,"character":33},"members":{"createNativeView":[{"__symbolic":"method"}]}}}}]
