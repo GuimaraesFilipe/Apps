@@ -1,0 +1,69 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+    navigatingTo="onNavigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar class="action-bar">
+            <StackLayout orientation="horizontal"
+                ios:horizontalAlignment="center"
+                android:horizontalAlignment="left">
+                <Image
+                    src="https://raw.githubusercontent.com/shiv19/nativescript-rivescript-demo/master/app/assets/bot.png"
+                    class="action-image" height="30" width="30"></Image>
+                <Label text="&nbsp;&nbsp;Bot" class="action-label"></Label>
+            </StackLayout>
+        </ActionBar>
+    </Page.actionBar>
+
+    <GridLayout columns="*" rows="*, auto">
+        <ListView row="0" id="listView" items="{{ chats }}"
+            separatorColor="transparent">
+            <ListView.itemTemplate>
+                <Border borderWidth="0">
+                    <StackLayout
+                        visibility="{{ who === 'user' ? 'visible' : 'visible' }}">
+                        <GridLayout columns="*, auto" rows="*, 10"
+                            class="chatMsg me">
+                            <StackLayout col="0" row="0"
+                                orientation="horizontal"
+                                horizontalAlignment="{{ who === 'user' ? 'right' : 'left' }}">
+                                <Image class="authorimg" stretch="aspectFill"
+                                    visibility="{{ who === 'user' ? 'hidden' : 'visible' }}"
+                                    height="30" width="30"
+                                    verticalAlignment="top" src="{{ image }}"
+                                    col="0" />
+                                <Label
+                                    class="{{ who === 'user' ? 'chatMsgText' : 'botchatMsgText' }}"
+                                    textWrap="true" verticalAlignment="top">
+                                    <FormattedString>
+                                        <Span text="{{ message }}" />
+                                        <Span
+                                            text="{{ '&nbsp;&nbsp;&nbsp;&nbsp;' + timestamp }}"
+                                            paddingLeft="10" fontSize="10" />
+                                    </FormattedString>
+                                </Label>
+                            </StackLayout>
+                            <!-- <Label row="1" col="1" class="msg_timestamp me" text="{{ timestamp }}"
+                                        verticalAlignment="top" /> -->
+                        </GridLayout>
+                    </StackLayout>
+                </Border>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <StackLayout row="1" id="chatbox">
+            <GridLayout columns="*,auto" class="chatGridLayout">
+                <TextView row="0" col="0" id="chatText" class="chatTextField"
+                    returnPress="{{ onChat }}" hint="Start a new message"
+                    text="{{ userMsg }}" minHeight="50"
+                    textWrap="true"></TextView>
+
+                <!--<label row="0" col="1" ixd="chatBtn" xclass="btn btn-primary chatButton"
+                    textTransform="none" text="send ✓" tap="{{ onChat }}"></label> -->
+
+                <Button row="0" col="2" id="chatBtn"
+                    class="btn btn-primary chatButton" textTransform="none" co
+                    text="send" tap="{{ onChat }}"></Button>
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

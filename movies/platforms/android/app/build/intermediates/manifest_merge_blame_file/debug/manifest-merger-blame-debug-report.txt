@@ -1,0 +1,262 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.nativescript.blankng"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:13:2-15:44
+8        android:minSdkVersion="17"
+8-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:14:3-29
+9        android:targetSdkVersion="28" />
+9-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:15:3-42
+10
+11    <supports-screens
+11-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:7:2-11:33
+12        android:largeScreens="true"
+12-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:10:3-30
+13        android:normalScreens="true"
+13-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:9:3-31
+14        android:smallScreens="true"
+14-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:8:3-30
+15        android:xlargeScreens="true" />
+15-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:11:3-31
+16
+17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+17-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:17:2-76
+17-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:17:19-74
+18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+18-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:18:2-77
+18-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:18:19-75
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:19:2-63
+19-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:19:19-61
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[:kinvey_nativescript_sdk:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\8f1c12d89c173b5d52e00840aa0ffdea\kinvey_nativescript_sdk\AndroidManifest.xml:9:5-79
+20-->[:kinvey_nativescript_sdk:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\8f1c12d89c173b5d52e00840aa0ffdea\kinvey_nativescript_sdk\AndroidManifest.xml:9:22-76
+21    <uses-permission android:name="android.permission.WAKE_LOCK" />
+21-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:14:5-68
+21-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:14:22-65
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+22-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:15:5-77
+22-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:15:22-74
+23    <uses-permission android:name="android.permission.CAMERA" />
+23-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:9:5-65
+23-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:9:22-62
+24    <uses-permission android:name="android.permission.FLASHLIGHT" />
+24-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:10:5-69
+24-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:10:22-66
+25
+26    <uses-feature
+26-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:12:5-14:36
+27        android:name="android.hardware.camera"
+27-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:13:9-47
+28        android:required="false" />
+28-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:14:9-33
+29
+30    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+30-->[:nativescript_geolocation:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\3441c0749c4818700285b0116d76c358\nativescript_geolocation\AndroidManifest.xml:9:5-79
+30-->[:nativescript_geolocation:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\3441c0749c4818700285b0116d76c358\nativescript_geolocation\AndroidManifest.xml:9:22-76
+31    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+31-->[com.android.installreferrer:installreferrer:1.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\1ec09e709a7798b3d06e5f9a3c8dfaa8\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+31-->[com.android.installreferrer:installreferrer:1.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\1ec09e709a7798b3d06e5f9a3c8dfaa8\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+32
+33    <application
+33-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:21:2-46:16
+34        android:name="com.tns.NativeScriptApplication"
+34-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:22:3-49
+35        android:allowBackup="true"
+35-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:23:3-29
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.0.1] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\eeb5da7c8c0996fbc1c9cdf4633c58bb\core-1.0.1\AndroidManifest.xml:22:18-86
+37        android:debuggable="true"
+38        android:icon="@drawable/icon"
+38-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:24:3-32
+39        android:label="@string/app_name"
+39-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:25:3-35
+40        android:supportsRtl="true"
+40-->[com.facebook.android:facebook-android-sdk:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\a468fe4dd512c5f357582d121ec57852\facebook-android-sdk-5.15.3\AndroidManifest.xml:28:18-44
+41        android:theme="@style/AppTheme" >
+41-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:26:3-34
+42        <activity
+42-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:28:3-40:14
+43            android:name="com.tns.NativeScriptActivity"
+43-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:29:4-47
+44            android:configChanges="keyboardHidden|orientation|screenSize"
+44-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:31:4-65
+45            android:label="@string/title_activity_kimera"
+45-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:30:4-49
+46            android:theme="@style/LaunchScreenTheme" >
+46-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:32:4-44
+47            <meta-data
+47-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:34:4-87
+48                android:name="SET_THEME_ON_LAUNCH"
+48-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:34:15-49
+49                android:resource="@style/AppTheme" />
+49-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:34:50-84
+50
+51            <intent-filter>
+51-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:36:4-39:20
+52                <action android:name="android.intent.action.MAIN" />
+52-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:37:5-57
+52-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:37:13-54
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:38:5-65
+54-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:38:15-62
+55            </intent-filter>
+56        </activity>
+57        <activity android:name="com.tns.ErrorReportActivity" />
+57-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:41:3-57
+57-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:41:13-55
+58
+59        <provider
+59-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:43:3-45:32
+60            android:name="com.facebook.FacebookContentProvider"
+60-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:44:7-58
+61            android:authorities="com.facebook.app.FacebookContentProvider1771472059772879"
+61-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:43:13-91
+62            android:exported="true" />
+62-->C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\AndroidManifest.xml:45:7-30
+63
+64        <activity
+64-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:30:9-33:66
+65            android:name="com.facebook.FacebookActivity"
+65-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:31:13-57
+66            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+66-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:32:13-96
+67            android:theme="@style/com_facebook_activity_theme" />
+67-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:33:13-63
+68        <activity android:name="com.facebook.CustomTabMainActivity" />
+68-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:34:9-71
+68-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:34:19-68
+69        <activity
+69-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:35:9-49:20
+70            android:name="com.facebook.CustomTabActivity"
+70-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:36:13-58
+71            android:exported="true" >
+71-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:37:13-36
+72            <intent-filter>
+72-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:39:13-48:29
+73                <action android:name="android.intent.action.VIEW" />
+73-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:40:17-69
+73-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:40:25-66
+74
+75                <category android:name="android.intent.category.DEFAULT" />
+75-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:42:17-76
+75-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:42:27-73
+76                <category android:name="android.intent.category.BROWSABLE" />
+76-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:43:17-78
+76-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:43:27-75
+77
+78                <data
+78-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:45:17-47:50
+79                    android:host="cct.org.nativescript.blankng"
+79-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:46:21-56
+80                    android:scheme="fbconnect" />
+80-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:47:21-47
+81            </intent-filter>
+82        </activity>
+83        <activity
+83-->[com.google.android.gms:play-services-base:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\092439a686ad9a7644c195f523489d86\jetified-play-services-base-11.4.0\AndroidManifest.xml:19:9-172
+84            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+84-->[com.google.android.gms:play-services-base:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\092439a686ad9a7644c195f523489d86\jetified-play-services-base-11.4.0\AndroidManifest.xml:19:19-85
+85            android:exported="false"
+85-->[com.google.android.gms:play-services-base:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\092439a686ad9a7644c195f523489d86\jetified-play-services-base-11.4.0\AndroidManifest.xml:19:146-170
+86            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+86-->[com.google.android.gms:play-services-base:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\092439a686ad9a7644c195f523489d86\jetified-play-services-base-11.4.0\AndroidManifest.xml:19:86-145
+87
+88        <meta-data
+88-->[com.google.android.gms:play-services-basement:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\20246603577be4049bbb0ef1b0ba2879\jetified-play-services-basement-11.4.0\AndroidManifest.xml:20:9-121
+89            android:name="com.google.android.gms.version"
+89-->[com.google.android.gms:play-services-basement:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\20246603577be4049bbb0ef1b0ba2879\jetified-play-services-basement-11.4.0\AndroidManifest.xml:20:20-65
+90            android:value="@integer/google_play_services_version" />
+90-->[com.google.android.gms:play-services-basement:11.4.0] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\20246603577be4049bbb0ef1b0ba2879\jetified-play-services-basement-11.4.0\AndroidManifest.xml:20:66-119
+91
+92        <service
+92-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:18:9-22:19
+93            android:name="net.gotev.uploadservice.UploadService"
+93-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:19:13-65
+94            android:enabled="true"
+94-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:20:13-35
+95            android:exported="false" >
+95-->[:uploadservice-release:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\746be1cd9bc24303352945b2eea4219d\uploadservice-release\AndroidManifest.xml:21:13-37
+96        </service>
+97
+98        <activity
+98-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:17:9-29:20
+99            android:name="com.google.zxing.client.android.CaptureActivity"
+99-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:18:13-75
+100            android:clearTaskOnLaunch="true"
+100-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:19:13-45
+101            android:configChanges="keyboardHidden|orientation|screenSize"
+101-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:20:13-74
+102            android:exported="false"
+102-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:21:13-37
+103            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+103-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:22:13-71
+104            android:windowSoftInputMode="stateAlwaysHidden" >
+104-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:23:13-60
+105            <intent-filter>
+105-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:24:13-28:29
+106                <action android:name="com.google.zxing.client.android.SCAN" />
+106-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:25:17-79
+106-->[:nativescript_barcodescanner:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\531cf6154cc7cbc9e6e9258d485c3992\nativescript_barcodescanner\AndroidManifest.xml:25:25-76
+107
+108                <category android:name="android.intent.category.DEFAULT" />
+108-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:42:17-76
+108-->[com.facebook.android:facebook-common:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\cb156f1779ad9134855dc0848ab3b0f3\jetified-facebook-common-5.15.3\AndroidManifest.xml:42:27-73
+109            </intent-filter>
+110        </activity>
+111
+112        <provider
+112-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:13:9-22:20
+113            android:name="androidx.core.content.FileProvider"
+113-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:14:13-62
+114            android:authorities="org.nativescript.blankng.provider"
+114-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:15:13-60
+115            android:exported="false"
+115-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:16:13-37
+116            android:grantUriPermissions="true" >
+116-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:17:13-47
+117            <meta-data
+117-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:18:13-21:52
+118                android:name="android.support.FILE_PROVIDER_PATHS"
+118-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:19:17-67
+119                android:resource="@xml/provider_paths" />
+119-->[:nativescript_camera:] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\f66994fcfdff4662cbc3f13cb26cf525\jetified-nativescript_camera\AndroidManifest.xml:20:17-55
+120        </provider>
+121        <!--
+122         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+123         with the application context. This config is merged in with the host app's manifest,
+124         but there can only be one provider with the same authority activated at any given
+125         point; so if the end user has two or more different apps that use Facebook SDK, only the
+126         first one will be able to use the provider. To work around this problem, we use the
+127         following placeholder in the authority to identify each host application as if it was
+128         a completely different provider.
+129        -->
+130        <provider
+130-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:39:9-42:40
+131            android:name="com.facebook.internal.FacebookInitProvider"
+131-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:40:13-70
+132            android:authorities="org.nativescript.blankng.FacebookInitProvider"
+132-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:41:13-72
+133            android:exported="false" />
+133-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:42:13-37
+134
+135        <receiver
+135-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:44:9-50:20
+136            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+136-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:45:13-86
+137            android:exported="false" >
+137-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:46:13-37
+138            <intent-filter>
+138-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:47:13-49:29
+139                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+139-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:48:17-95
+139-->[com.facebook.android:facebook-core:5.15.3] C:\Users\Filipe Guimaraes\.gradle\caches\transforms-2\files-2.1\5a3452e7359d4b036d6fb9df8a260936\jetified-facebook-core-5.15.3\AndroidManifest.xml:48:25-92
+140            </intent-filter>
+141        </receiver>
+142    </application>
+143
+144</manifest>

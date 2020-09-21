@@ -1,0 +1,5 @@
+C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\assets\app\0.js
+C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\assets\app\bundle.js
+C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\assets\app\runtime.js
+C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\assets\app\tns-java-classes.js
+C:\Users\Filipe Guimaraes\Desktop\Apps\movies\platforms\android\app\src\main\assets\app\vendor.js

@@ -1,0 +1,68 @@
+.chatGridLayout {
+    background-color: rgb(187, 187, 184);
+}
+.chatTextField {
+    height: 35;
+    background-color: rgb(255, 255, 255); 
+    border-radius: 4;
+    font-size: 15;
+    margin: 0;
+    padding: 15 0 15 15;
+}
+.chatButton {
+    padding: 0;
+    margin: 2 5 2 5;
+    height: 35;
+    border-radius: 4;
+    background-color: rgb(69, 179, 18); 
+}
+
+
+.chatMsg {
+    font-size: 14;
+    padding: 0 2;
+}
+
+.chatMsgText {
+    background-color: #30A9FF;
+    color: white;
+    padding: 5;
+    margin-right: 8;
+    border-radius: 5;
+}
+
+.botchatMsgText {
+    background-color: rgb(207, 207, 207);
+    color: white;
+    padding: 5;
+    margin-right: 8;
+    border-radius: 5;
+}
+
+
+.chatListView {
+    top: 100;
+margin-top: 200;
+background-color: yellowgreen;
+}
+
+
+
+.them .msg_text {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 7;
+    border-radius: 5;
+    margin-right: 40;
+}
+
+.authorimg {
+    margin: 0 5 5 5;
+    width: 30;
+    height: 30;
+    border-radius: 15;
+}
+
+ListView{
+    margin-top: 10;
+}

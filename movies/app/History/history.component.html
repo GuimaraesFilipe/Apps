@@ -1,0 +1,146 @@
+<FlexboxLayout alignItems="stretch" flexDirection="column">
+    <ActionBar backgroundColor="white" flat="true">
+        <StackLayout orientation="vertical" width="100%" height="100%" backgroundColor="white">
+            <StackLayout col="0" row="1" orientation="horizontal" backgroundColor="#FFFFFF" height="60">
+
+                <StackLayout orientation="horizontal">
+                    <Label col="0" row="0" text="&#xf0c9;" class="fa menu-icon" (tap)="onDrawerButtonTap()" height="40"></Label>
+                    <Image col="2️" row="0" src="~/images/logo.png" height="40" width="80%" marginRight="5"></Image>
+                    <Image src="~/images/chatbot.jpg" (tap)=" onChatBotTap()" class="fa menu-icon" height="35" width="30" marginLeft="0" marginRight="10" marginBottom="15">
+
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ActionBar>
+
+    <GridLayout orientation="vertical" width="100%" height="auto" columns="*" rows="*,auto" backgroundColor="gray">
+
+        <ScrollView height="100%" orientation="vertical">
+
+            <FlexboxLayout (tap)="dismissKeyboard()" alignItems="stretch" flexDirection="column" height="auto">
+
+                <StackLayout col="0" height="auto" row="0">
+                    <StackLayout class="bottomleft" marginTop="-10" marginBottom="-5">
+                        <Image src="~/images/covid.jpg" class="img-rounded m-b-20"></Image>
+
+                    </StackLayout>
+
+
+
+                    <StackLayout *ngIf="isScan" (tap)="dismissKeyboard()" paddinRight="10" paddingLeft="10" paddingBottom="20" marginTop="-12" marginBottom="5️" class="transparent" borderColor="black" borderRadius="4" height="auto" width="95%" stretch="aspectFit">
+
+
+                        <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*" marginTop="25">
+                            <Label text="Select Country:" fontWeight="bold" fontSize="24" color="black" marginTop="10" row="0" col="0"></Label>
+                            <RadAutoCompleteTextView row="0" column="1" (didAutoComplete)="onMedSelected($event)" fontSize="18" height="50" [items]="suggest" suggestMode="Suggest" displayMode="Plain">
+                                <SuggestionView tkAutoCompleteSuggestionView>
+                                    <ng-template tkSuggestionItemTemplate let-item="item">
+                                        <GridLayout columns="auto, *">
+                                            <Image height="50" col="0" [src]="getImageName2(item.text)"></Image>
+                                            <Label col="1" #med1 [text]="item.text" fontSize="18" class="p-l-5"></Label>
+
+                                        </GridLayout>
+                                    </ng-template>
+                                </SuggestionView>
+                            </RadAutoCompleteTextView>
+                        </GridLayout>
+                        <DatePicker year="2019" month="4" day="20" [minDate]="minDate" [maxDate]="maxDate" (dateChange)="onDateChanged($event)" (dayChange)="onDayChanged($event)" (monthChange)="onMonthChanged($event)" (yearChange)="onYearChanged($event)" (loaded)="onDatePickerLoaded($event)"
+                            verticalAlignment="center">
+                        </DatePicker>
+
+                        <Button text="Search" (tap)="selectItems()" class="-outline" borderColor="black" fontWeight="bold" color="red" fontSize="20" backgroundColor="rgba(255, 255, 255, 0.8)" marginTop="30" marginLeft="20" marginRight="20"></Button>
+
+                    </StackLayout>
+
+
+
+                    <!-- <StackLayout marginRight="10" (tap)="dismissKeyboard()" marginLeft="20">
+                    <ListView class="list-group" [items]="result2" height="150">
+
+                        <ng-template let-item="item" let-i="index">
+                            <ScrollView (scroll)="onScroll($event)" orientation="horizontal" height="150">
+                                <GridLayout class="form" rows="auto,*" columns="*,*,*,*,*,*,*">
+
+                                    <Label row="0" col="1" class="font-weight-bold" color="black" fontSize="18" textAlign="center" text="Cases" marginLeft="25" marginTop="20"></Label>
+                                    <Label row="0" col="2" class="font-weight-bold" color="black" fontSize="18" textAlign="center" text="New Cases" marginLeft="25" marginTop="20"></Label>
+                                    <Label row="0" col="3" class="font-weight-bold" color="black" fontSize="18" textAlign="center" text="By 1M" marginLeft="25" marginTop="20"></Label>
+                                    <Label row="0" col="4" class="font-weight-bold" color="black" fontSize="18" textAlign="center" text="Active" marginLeft="25" marginTop="20"></Label>
+                                    <Label row="0" col="5" class="font-weight-bold" color="black" fontSize="18" textAlign="center" text="Recovered" marginLeft="25" marginTop="20"></Label>
+                                    <Label row="0" col="6" class="font-weight-bold" color="black" fontSize="18" textAlign="center" text="Deaths" marginLeft="25" marginTop="20"></Label>
+
+                                    <Image row="0" col="0" src="~/images/global.png" marginTop="20"></Image>
+                                    <Label row="0" col="1" class="font-weight-bold" [text]="item.value.cases.total" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="2" class="font-weight-bold" [text]="item.value.cases.new" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="3" class="font-weight-bold" [text]="item.value.cases['1M_pop']" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="4" class="font-weight-bold" [text]="item.value.cases.active" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="5" class="font-weight-bold" [text]="item.value.cases.recovered" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="6" class="font-weight-bold" [text]="item.value.deaths.total" textAlign="center" marginLeft="25" marginTop="50"></Label>
+
+                                </GridLayout>
+                            </ScrollView>
+                        </ng-template>
+                    </ListView>
+                </StackLayout> -->
+                    <StackLayout marginLeft="20" marginRight="10" height="40%" *ngIf="!isHomepage" (tap)="dismissKeyboard()">
+                        <ListView class="list-group" [items]="result" height="100%" *ngIf="!isHomepage">
+
+                            <ng-template let-item="item" let-i="index">
+
+                                <StackLayout height="100%">
+                                    <Image height="auto" textAlign="center" width="60%" [src]="getImageName(item.value.country)"></Image>
+
+                                    <Label class="date" [text]="item.value.day"></Label>
+
+                                    <GridLayout marginTop="5" rows="*,*,*,*" columns="*,*,auto,*">
+
+                                        <Label col="0" row="0" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="Cases"></Label>
+                                        <Label col="2" row="0" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="New Cases"></Label>
+                                        <Label col="0" row="2" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="By 1M"></Label>
+                                        <Label col="2" row="2" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="Deaths"></Label>
+                                        <Label col="0" row="1" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="Active"></Label>
+                                        <Label col="2" row="1" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="Recovered"></Label>
+                                        <Label col="2" row="3" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="Total Deaths"></Label>
+                                        <Label col="0" row="3" fontWeight="bold" color="black" fontSize="22" textAlign="center" text="Tests"></Label>
+
+                                        <Label col="1" row="0" fontWeight="bold" fontSize="18" [text]="item.value.cases.total" textAlign="center"></Label>
+                                        <Label col="4" row="0" fontWeight="bold" fontSize="18" [text]="item.value.cases.new" marginLeft="15" textAlign="center"></Label>
+                                        <Label col="1" row="2" fontWeight="bold" fontSize="18" [text]="item.value.cases['1M_pop']" textAlign="center"></Label>
+                                        <Label col="1" row="1" fontWeight="bold" fontSize="18" [text]="item.value.cases.active" textAlign="center"></Label>
+                                        <Label col="4" row="1" fontWeight="bold" fontSize="18" [text]="item.value.cases.recovered" marginLeft="15" textAlign="center"></Label>
+                                        <Label col="4" row="3" fontWeight="bold" fontSize="18" [text]="item.value.deaths.total" marginLeft="15" textAlign="center"></Label>
+                                        <Label col="4" row="2" fontWeight="bold" fontSize="18" [text]="item.value.deaths.new" marginLeft="15" textAlign="center"></Label>
+                                        <Label col="1" row="3" fontWeight="bold" fontSize="18" [text]="item.value.tests.total" textAlign="center"></Label>
+
+
+
+                                    </GridLayout>
+
+                                </StackLayout>
+
+                            </ng-template>
+                        </ListView>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </FlexboxLayout>
+
+        </ScrollView>
+
+        <StackLayout col="0" row="1" orientation="horizontal" backgroundColor="#FFFFFF" height="60" position="absolute">
+            <GridLayout rows="*,*" columns="*,*">
+                <Label col="0" row="0" color="gray" text="&#xf015;" height="60" fontSize="35" marginTop="25" class="fa menu-icon" marginBottom="15" (tap)="onHistoryTap()"></Label>
+                <Label col="0" row="1" text="Home" fontSize="12" class="bar-text" marginTop="10" marginLeft="85"></Label>
+                <!-- <Image col="1" row="0"  height="30" width="20" margin="12" src="~/images/alarm.jpg"></Image> -->
+                <Label col="1" row="0" color="gray" text="&#xf073;" height="40" fontSize="30" marginTop="25" class="fa menu-icon" marginBottom="15" (tap)="onHistoryTap()"></Label>
+                <Label col="1" row="1" text="History" fontSize="12" (tap)="onHistoryTap()" class="bar-text" marginTop="10" marginLeft="85"></Label>
+                <!-- <Image col="2" row="0" (tap)="onLoginTap()" height="25" width="25" margin="10" marginLeft="-5" src="~/images/medicines.png"></Image> -->
+            </GridLayout>
+        </StackLayout>
+
+
+    </GridLayout>
+</FlexboxLayout>

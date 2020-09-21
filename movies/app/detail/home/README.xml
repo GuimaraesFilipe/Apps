@@ -1,0 +1,19 @@
+<!-- 
+    
+Just chat with that bot, using the chat box. (try sending "rpg demo", for something cool, 
+but remember to send "exit" in
+the end because same instance of the bot will be servered as long as username is same) 
+(also, if you see the bot is acting
+unusual, it's a good idea to send "exit" once) 
+
+This is just a sample of what you can do with RiveScript and {N}, it is not an Advanced Chatbot
+
+Code for the server can be found here : https://github.com/shiv19/node-rivebot
+
+wish to donate? : https://paypal.me/multishiv19
+contact me: sp@shiv19.com
+blog: https://shiv19.com
+
+Made with ♥ for {N} Community
+
+-->

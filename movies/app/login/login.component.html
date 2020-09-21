@@ -1,0 +1,108 @@
+<FlexboxLayout (tap)="dismissKeyboard()" class="page">
+    <Image class="logo" src="~/images/logo.png"></Image>
+    <StackLayout class="form">
+        <PreviousNextView>
+            <ScrollView class="scroll" marginTop="5">
+                <GridLayout (tap)="dismissKeyboard()" height="auto" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto">
+                    <StackLayout *ngIf="isLoggingIn" row="0" class="input-field">
+                        <StackLayout *ngIf="!cameraImage; else elseBlock">
+                            <Image row="1" src="~/images/profile.png" stretch="fill" margin="10" class="photo"></Image>
+                        </StackLayout>
+                        <ng-template #elseBlock>
+                            <Image row="1" [src]="cameraImage" stretch="fill" margin="10" class="photo"></Image>
+                        </ng-template>
+                    </StackLayout>
+
+                    <StackLayout *ngIf="!isLoggingIn" row="0" class="input-field">
+                        <StackLayout *ngIf="!cameraImage; else elseBlock">
+                            <Image row="1" src="~/images/profile.png" stretch="fill" margin="10" class="photo"></Image>
+                        </StackLayout>
+                        <ng-template #elseBlock>
+                            <Image row="1" [src]="cameraImage" stretch="fill" margin="10" class="photo"></Image>
+                        </ng-template>
+                        <Button text="Select Picture" (tap)="getImage($event)" row="2" class="btn btn-primary m-t-20">></Button>
+                    </StackLayout>
+
+                    <StackLayout row="4" *ngIf="!isLoggingIn" class="input-field">
+                        <label class="input2" marginBottom="5" text="First Name"></label>
+
+                        <TextField class="input" borderColor="white" [isEnabled]="!processing" [(ngModel)]="user.firstName" returnKeyType="next" (returnPress)="focusLastName()"></TextField>
+
+                    </StackLayout>
+
+                    <StackLayout row="5" *ngIf="!isLoggingIn" class="input-field">
+                        <label class="input2" marginBottom="5" text="Last Name"></label>
+
+                        <TextField #lastName class="input" style.placeholderColor="white" [isEnabled]="!processing" [(ngModel)]="user.lastName" returnKeyType="next" (returnPress)="focusDate()"></TextField>
+
+                    </StackLayout>
+
+
+                    <StackLayout row="6" *ngIf="!isLoggingIn" class="input-field">
+                        <label class="input2" marginBottom="5" text="Date of Birth"></label>
+                        <TextField #dateofBirth class="input" style.placeholderColor="white" keyboardType="datetime" [isEnabled]="!processing" [(ngModel)]="user.date" returnKeyType="next" (returnPress)="focusCountry()"></TextField>
+
+                    </StackLayout>
+                    <StackLayout row="7" *ngIf="!isLoggingIn" class="input-field">
+                        <label class="input2" marginBottom="5" text="Country"></label>
+                        <TextField #country class="input" style.placeholderColor="white" [isEnabled]="!processing" [(ngModel)]="user.country" returnKeyType="next" (returnPress)="focusFavorite()"></TextField>
+
+                    </StackLayout>
+
+                    <StackLayout row="8" *ngIf="!isLoggingIn" class="input-field">
+                        <label class="input2" marginBottom="5" text="Favorite Genre"></label>
+                        <TextField #favorite class="input" style.placeholderColor="white" [isEnabled]="!processing" [(ngModel)]="user.favorite" returnKeyType="Done" (returnPress)="focusEmail()"></TextField>
+
+                    </StackLayout>
+                    <StackLayout row="1" class="input-field">
+                        <label class="input2" marginBottom="5" text="Email"></label>
+                        <TextField #email class="input" style.placeholderColor="white" [isEnabled]="!processing" keyboardType="email" autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.email" returnKeyType="next" (returnPress)="focusPassword()"></TextField>
+
+                    </StackLayout>
+
+                    <StackLayout row="2" class="input-field">
+                        <label class="input2" marginBottom="5" text="Password"></label>
+
+                        <StackLayout orientation="horizontal">
+                            <TextField #password width="90%" class="input" style.placeholderColor="white" [isEnabled]="!processing" hitColor="white" secure="true" [(ngModel)]="user.password" [returnKeyType]="isLoggingIn ? 'done' : 'next'" (returnPress)="focusConfirmPassword()"></TextField>
+                            <Label marginLeft="2" text="&#xf06e;" fontSize="20" eight="40" width="60" class="fa menu-icon" (tap)="toggleShow()"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout row="3" *ngIf="!isLoggingIn" class="input-field">
+                        <label class="input2" marginBottom="5" text="Confirm Password"></label>
+                        <StackLayout orientation="horizontal">
+                            <TextField #confirmPassword style.placeholderColor="white" width="90%" class="input" [isEnabled]="!processing" secure="true" [(ngModel)]="user.confirmPassword" returnKeyType="next" (returnPress)="focusFirstName()"></TextField>
+                            <Label marginLeft="2" text="&#xf06e;" fontSize="20" eight="40" width="60" class="fa menu-icon" (tap)="toggleShow2()"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout row="9" class="input-field">
+                        <Button [text]="isLoggingIn ? 'Sign In' : 'Register'" [isEnabled]="!processing" (tap)="submit()" class="btn btn-primary m-t-20" marginTop="10"></Button>
+                        <Label *ngIf="isLoggingIn" text="Forgot your password?" class="login-label2" (tap)="forgotPassword()"></Label>
+                    </StackLayout>
+
+                    <StackLayout row="10" marginTop="15">
+                        <FacebookLoginButton (login)="onLogin($event)" class="fb"> </FacebookLoginButton>
+
+                    </StackLayout>
+
+                    <ActivityIndicator rowSpan="3" [busy]="processing"></ActivityIndicator>
+                </GridLayout>
+            </ScrollView>
+        </PreviousNextView>
+
+
+
+
+    </StackLayout>
+
+    <Label class="login-label sign-up-label" (tap)="toggleDisplay()">
+            <FormattedString>
+                <Span [text]="isLoggingIn ? 'Don’t have an account? ' : 'Back to Login'"></Span>
+                <Span [text]="isLoggingIn ? 'Sign up' : ''" class="bold"></Span>
+            </FormattedString>
+        </Label>
+    <Label class="terms-label" text="By continuing you agree to our"> </Label>
+    <Label class="terms-label" text="Terms & Conditions"></Label>
+</FlexboxLayout>
