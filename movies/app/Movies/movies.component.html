@@ -18,7 +18,7 @@
 
     <GridLayout orientation="vertical" width="100%" height="auto" columns="*" rows="*,auto" backgroundColor="rgba(0,0,0)">
 
-        <StackLayout height="100%" orientation="vertical" *ngIf="isHomepage">
+        <StackLayout height="100%" orientation="vertical">
             <ScrollView height="100%">
 
                 <FlexboxLayout (tap)="dismissKeyboard()" alignItems="stretch" flexDirection="column" height="auto">
@@ -27,9 +27,9 @@
 
                         <Image [src]="random" height="90%"></Image>
 
+
+
                         <Button text="Add to My List" (tap)="addItem()" class="text-center" color=" rgba(214, 122, 35, 0.8)" fontSize="15" backgroundColor="rgba(241,102,39)" width="50%" borderRadius="5" orientation="horizontal" marginTop="30" padding="1" marginRight="30"></Button>
-
-
 
                     </StackLayout>
 
@@ -57,9 +57,9 @@
 
                                     <!-- <Image row="0" col="0" src="~/images/global.png" marginTop="20"></Image> -->
                                     <!-- <Image row="0" col="0" height="90" [src]="extractImage(item.value.imdb_id)"></Image> -->
-                                    <Image row="0" col="0" class="movies" [src]="item.image.poster" (tap)="selectedSearch()"></Image>
-                                    <Label #movieShow fontSize="0" color="Black" [text]="item.image.id"></Label>
-
+                                    <Image row="0" col="0" class="movies" [src]="item.image" (tap)="selectedSearch()"></Image>
+                                    <!-- <Label row="0" col="1" fontSize="18" fontWeight="bold" color="white" [text]="item.value.title" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="2" fontSize="18" fontWeight="bold" color="white" [text]="item.value.year" textAlign="center" marginLeft="25" marginTop="50"></Label> -->
 
 
                                 </GridLayout>
@@ -90,7 +90,7 @@
 
                                     <!-- <Image row="0" col="0" src="~/images/global.png" marginTop="20"></Image> -->
                                     <!-- <Image row="0" col="0" height="90" [src]="extractImage(item.value.imdb_id)"></Image> -->
-                                    <Image row="0" col="0" class="movies" [src]="item.image.poster" (tap)="selectedSearch()"></Image>
+                                    <Image row="0" col="0" class="movies" [src]="item.image" (tap)="selectedSearch()"></Image>
                                     <!-- <Label row="0" col="1" fontSize="18" fontWeight="bold" color="white" [text]="item.value.title" textAlign="center" marginLeft="25" marginTop="50"></Label>
                                     <Label row="0" col="2" fontSize="18" fontWeight="bold" color="white" [text]="item.value.year" textAlign="center" marginLeft="25" marginTop="50"></Label> -->
 
@@ -123,7 +123,7 @@
 
                                     <!-- <Image row="0" col="0" src="~/images/global.png" marginTop="20"></Image> -->
                                     <!-- <Image row="0" col="0" height="90" [src]="extractImage(item.value.imdb_id)"></Image> -->
-                                    <Image row="0" col="0" class="movies" [src]="item.image.poster" (tap)="selectedSearch()"></Image>
+                                    <Image row="0" col="0" class="movies" [src]="item.image" (tap)="selectedSearch()"></Image>
                                     <!-- <Label row="0" col="1" fontSize="18" fontWeight="bold" color="white" [text]="item.value.title" textAlign="center" marginLeft="25" marginTop="50"></Label>
                                     <Label row="0" col="2" fontSize="18" fontWeight="bold" color="white" [text]="item.value.year" textAlign="center" marginLeft="25" marginTop="50"></Label> -->
 
@@ -157,10 +157,10 @@
 
                                     <!-- <Image row="0" col="0" src="~/images/global.png" marginTop="20"></Image> -->
                                     <!-- <Image row="0" col="0" height="90" [src]="extractImage(item.value.imdb_id)"></Image> -->
-                                    <Image row="0" col="0" class="movies" [src]="item.image.poster" (tap)="selectedSearch()"></Image>
-                                    <Label #movieShow row="1" col="0" fontSize="0" color="Black" [text]="item.image.id" textAlign="center"></Label>
-                                    <!-- <Label row="0" col="2" fontSize="18" fontWeight="bold" color="white" [text]="item.value.year" textAlign="center" marginLeft="25" marginTop="50"></Label>
- -->
+                                    <Image row="0" col="0" class="movies" [src]="item.image" (tap)="selectedSearch()"></Image>
+                                    <!-- <Label row="0" col="1" fontSize="18" fontWeight="bold" color="white" [text]="item.value.title" textAlign="center" marginLeft="25" marginTop="50"></Label>
+                                    <Label row="0" col="2" fontSize="18" fontWeight="bold" color="white" [text]="item.value.year" textAlign="center" marginLeft="25" marginTop="50"></Label> -->
+
 
                                 </GridLayout>
 
@@ -190,7 +190,7 @@
 
                                     <!-- <Image row="0" col="0" src="~/images/global.png" marginTop="20"></Image> -->
                                     <!-- <Image row="0" col="0" height="90" [src]="extractImage(item.value.imdb_id)"></Image> -->
-                                    <Image row="0" col="0" class="movies" [src]="item.image.poster" (tap)="selectedSearch()"></Image>
+                                    <Image row="0" col="0" class="movies" [src]="item.image" (tap)="selectedSearch()"></Image>
                                     <!-- <Label row="0" col="1" fontSize="18" fontWeight="bold" color="white" [text]="item.value.title" textAlign="center" marginLeft="25" marginTop="50"></Label>
                                     <Label row="0" col="2" fontSize="18" fontWeight="bold" color="white" [text]="item.value.year" textAlign="center" marginLeft="25" marginTop="50"></Label> -->
 
@@ -201,42 +201,6 @@
                         </RadListView>
 
                     </StackLayout>
-
-
-                </FlexboxLayout>
-            </ScrollView>
-        </StackLayout>
-        <StackLayout height="100%" *ngIf="!isHomepage" orientation="vertical">
-            <ScrollView height="100%">
-
-                <FlexboxLayout (tap)="dismissKeyboard()" alignItems="stretch" flexDirection="column" height="auto">
-                    <RadListView class="list-group" orientation="horizontal" [items]="result4" height="80%">
-
-                        <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal"></ListViewLinearLayout>
-
-                        <ng-template let-item="item" let-i="index">
-
-
-                            <StackLayout col="0" height="80%" row="0">
-                                <ActivityIndicator [busy]="isBusy" color="rgba(196, 170, 3)" width="100" height="100"></ActivityIndicator>
-                                <Image [src]="item.image.poster" height="90%"></Image>
-
-                                <Button text="Add to My List" (tap)="addItem()" class="text-center" color=" rgba(214, 122, 35, 0.8)" fontSize="15" backgroundColor="rgba(241,102,39)" width="50%" borderRadius="5" orientation="horizontal" marginTop="30" padding="1" marginRight="30"></Button>
-
-
-
-                                <GridLayout rows="auto,*" orientation="horizontal" columns="*,*">
-
-
-
-                                </GridLayout>
-
-
-
-                            </StackLayout>
-
-                        </ng-template>
-                    </RadListView>
 
 
                 </FlexboxLayout>

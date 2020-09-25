@@ -38,9 +38,9 @@ import { init, initAnalytics } from "nativescript-facebook";
 import { BarcodeScanner } from "nativescript-barcodescanner";
 import { NativeScriptFacebookModule } from "nativescript-facebook/angular";
 import { MyHttpGetService2 } from "./home/http-get.services";
-import { MyHttpGetService } from "./history/http-get.services";
+import { MyHttpGetService } from "./Movies/http-get.services";
 
-import { HistoryComponent } from "./history/history.component";
+import { MoviesComponent } from "./Movies/movies.component";
 
 
 
@@ -80,7 +80,7 @@ application.on(application.launchEvent, function (args) {
     ],
     declarations: [
         AppComponent,
-        HistoryComponent,
+        MoviesComponent,
         AppComponent,
         DetailComponent,
         LoginComponent,
@@ -99,7 +99,7 @@ application.on(application.launchEvent, function (args) {
         HomeComponent,
         MyHttpGetService,
         AppComponent,
-        HistoryComponent, 
+        MoviesComponent, 
         MyHttpGetService2,
         authProviders,
         BackendService,

@@ -17,6 +17,13 @@ ActionBar {
     text-align: center;
 }
 
+.movies {
+    vertical-align: center;
+    height: 200;
+    width: 150;
+    margin-right: 10;
+}
+
 .text-left {
     vertical-align: center;
     text-align: left;
@@ -29,8 +36,6 @@ ActionBar {
 .fa {
     font-family: "FontAwesome";
     font-size: large;
-    text-align: right;
-    vertical-align: center;
     orientation: horizontal;
     margin-top: -12;
     margin-left: 5;
@@ -148,11 +153,12 @@ ActionBar {
 }
 
 .menu-icon {
-    font-size: 20;
-    color: black;
+    font-size: 30;
+    color: rgba(196, 170, 3);
     padding-left: 0;
     vertical-align: center;
-    margin-left: 5;
+    text-align: center;
+    margin-left: 0;
     margin-top: 15;
 }
 
@@ -200,7 +206,7 @@ ActionBar {
 .bar-text {
     text-align: center;
     margin-top: 0;
-    color: rgba(96, 97, 97);
+    color: rgba(196, 170, 3);
     font-size: 16;
 }
 
@@ -233,15 +239,6 @@ ActionBar {
     margin-bottom: 15;
 }
 
-.menu-icon {
-    font-size: 20;
-    color: black;
-    padding-left: 0;
-    vertical-align: center;
-    margin-left: 5;
-    margin-top: 15;
-}
-
 .text-center {
     vertical-align: center;
     text-align: center;
@@ -268,16 +265,6 @@ ActionBar {
     margin-right: 15;
     height: 50;
     background-color: white;
-}
-
-.fa {
-    font-family: "FontAwesome";
-    font-size: large;
-    text-align: center;
-    vertical-align: center;
-    orientation: horizontal;
-    margin-top: 12;
-    font-size: 22;
 }
 
 .page-icon {
@@ -429,22 +416,13 @@ ActionBar {
     margin-bottom: 15;
 }
 
-.menu-icon {
-    font-size: 20;
-    color: black;
-    padding-left: 0;
-    vertical-align: center;
-    margin-left: 5;
-    margin-top: 15;
-}
-
 .text-center {
     vertical-align: center;
     text-align: center;
     width: 100%;
     font-weight: bold;
     color: white;
-    font-size: 20;
+    font-size: 26;
 }
 
 .text-left {
@@ -468,7 +446,7 @@ ActionBar {
 
 .bottomleft {
     background-position: 5% 60%;
-    background-size: 70%;
+    background-size: 90%;
     width: 100%;
     padding-top: 5;
     height: auto;

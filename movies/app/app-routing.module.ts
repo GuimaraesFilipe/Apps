@@ -4,7 +4,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import {LoginComponent } from "./login/login.component";
 
 import { HomeComponent } from "./home/home.component";
-import { HistoryComponent } from "./history/history.component";
+import { MoviesComponent } from "./Movies/movies.component";
 import { AuthGuard } from "./backend/auth-guard.service";
 
 
@@ -17,7 +17,7 @@ export const authProviders = [
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", loadChildren: "./home/home.module#HomeModule" },
-    { path: "history", component: HistoryComponent },
+    { path: "history", component:MoviesComponent },
     {path: "login",  component: LoginComponent},
   
 

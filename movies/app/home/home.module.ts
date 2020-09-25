@@ -12,7 +12,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
-import { HistoryComponent } from "~/history/history.component";
+import { MoviesComponent } from "~/Movies/movies.component";
 
 
 
@@ -37,7 +37,7 @@ import { HistoryComponent } from "~/history/history.component";
         NO_ERRORS_SCHEMA
     ],
     providers:[
-        HistoryComponent
+        MoviesComponent,
         
     ]
 })

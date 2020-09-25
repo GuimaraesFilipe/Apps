@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
     //     providedIn: "root"
     // }
 )
-export class MyHttpGetService2 {
+export class MyHttpGetService {
     private serverUrl = "https://covid-193.p.rapidapi.com/countries";
     
 
@@ -61,21 +61,13 @@ export class MyHttpGetService2 {
       return this.http.get(serverUrl1, { headers: headers});
         // return `~/images/flags/${lower}-flag-country-nation-union-empire.png`;
     }
-    getSelectedMovieShow(value) {
-        // var lower=value.charAt(0).toLowerCase() + value.slice(1);
-        // console.log(lower);
-        const serverUrl1 = `https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/${value}`; 
-      let headers = this.Header2();
-      return this.http.get(serverUrl1, { headers: headers});
-        // return `~/images/flags/${lower}-flag-country-nation-union-empire.png`;
-    }
     
     
     private Header() {
         // set headers here e.g.
         let headers = new HttpHeaders({
             "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-            "x-rapidapi-key": "f202e0f401msh7f74c1bb498e590p130cfajsn9347834a60fa",
+            "x-rapidapi-key": "1ebca4f1c3msh15dce4c7b4ed44cp1747ecjsn58028a67a977"
          });
          
          

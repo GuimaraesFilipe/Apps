@@ -2,11 +2,11 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
-import { HistoryComponent } from "./history.component";
+import { MoviesComponent } from "./movies.component";
 
 
 const routes: Routes = [
-    { path: "", component: HistoryComponent}
+    { path: "", component: MoviesComponent}
 ];
 
 @NgModule({

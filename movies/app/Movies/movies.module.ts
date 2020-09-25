@@ -10,8 +10,8 @@ import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 
-import { HomeRoutingModule } from "./history-routing.module";
-import { HistoryComponent } from "./history.component";
+import { HomeRoutingModule } from "./movies-routing.module";
+import { MoviesComponent } from "./movies.component";
 
 
 
@@ -29,7 +29,7 @@ import { HistoryComponent } from "./history.component";
         NativeScriptFormsModule
     ],
     declarations: [
-        HistoryComponent
+        MoviesComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

@@ -11,23 +11,21 @@ import { isIOS, isAndroid } from 'tns-core-modules/platform';
 var utilityModule = require("utils/utils");
 declare const UIApplication;
 import * as app from "tns-core-modules/application";
-import { MyHttpGetService2 } from "./http-get.services";  
+import { MyHttpGetService } from "./http-get.services";  
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { ActivityIndicator } from "tns-core-modules/ui/activity-indicator";
-import { AnyTxtRecord } from "dns";
-import { getString } from "tns-core-modules/application-settings";
 
 
 @Component({
-    selector: "Home",
+    selector: "Movies",
     moduleId: module.id,
-    templateUrl: "./home.component.html",
-    styleUrls: ['./home.component.css']
+    templateUrl: "./movies.component.html",
+    styleUrls: ['./movies.component.css']
 })
 @Injectable()
 
-export class HomeComponent implements OnInit {
+export class MoviesComponent implements OnInit {
 
   isBusy: boolean = true;
     random: any;
@@ -35,20 +33,18 @@ export class HomeComponent implements OnInit {
     result2: Array<any> = []; 
     result3: Array<any> = []; 
     result4: Array<any> = []; 
-    resultSelected: Array<any> = []; 
     suggestions: Array<any> = [];
     filtered: Array<any> = [];
     filtered2: Array<any> = [];
     suggest: ObservableArray<TokenModel>;
   	db: any;
-    selected: Array<Object> = [];
+   
     user_id: string;
      url: string = "<url>"; 
     value:boolean = utils.isDataURI(this.url);
-    @ViewChild("movieShow",{static: false}) movieShow: ElementRef;
+     @ViewChild("movieShow",{static: false}) movieShow: ElementRef;
      @ViewChild("med2", {static: false}) med2: ElementRef;
      @ViewChild("med3",{static: false}) med3: ElementRef;
-     movie_show="";
     sum = 0;
     sumTotal = 0;
     sumDeaths = 0;
@@ -75,10 +71,10 @@ export class HomeComponent implements OnInit {
   }
    
     
-    constructor(private http: HttpClient,private myService: MyHttpGetService2, private routerExtensions: RouterExtensions, private appcomponent: AppComponent) {
+    constructor(private http: HttpClient,private myService: MyHttpGetService, private routerExtensions: RouterExtensions, private appcomponent: AppComponent) {
 
 
-
+      
        
     } 
     
@@ -212,7 +208,7 @@ private onGetStatics(res) {
     
       for (let key in res) {
         
-        this.filtered.push({image: res});
+        this.filtered.push({image: res.poster});
         // console.log("IMAGE REsult ",this.result);
     
         this.result= this.filtered.reduce((acc, current) => {
@@ -287,7 +283,7 @@ private onGetTrendingMovies(res) {
     
       for (let key in res) {
         
-        this.filtered2.push({image: res});
+        this.filtered2.push({image: res.poster});
         // console.log("IMAGE REsult ",this.result);
     
         this.result4= this.filtered2.reduce((acc, current) => {
@@ -330,6 +326,7 @@ private onGetTrendingMovies(res) {
   
 
    
+
 // addInteraction(medHerbSup: string) {
 //   console.log("add medHerbSup", medHerbSup)
 //     dialogs.action({
@@ -359,48 +356,49 @@ private onGetTrendingMovies(res) {
 //     });
 //    }
 
-selectedSearch() {
-  this.selected = [];
-this.movie_show= getString("movieShow");
-  this.isHomepage = !this.isHomepage;
- console.log(' got MOvieShow', this.movie_show);
- this.extractSelectMovieShow(this.movie_show);
+// selectedSearch() {
+//   this.movieShow= [];
+//   this.isHomepage = !this.isHomepage;
+//  console.log(' Got MovieShow', this.med_1)
+// this.databaseService.getdbConnection()
+// .then(db => {
+//   db.all("SELECT * FROM medHerbSup WHERE medHerbSup = ?" ,[this.med_1] ).then(rows => {
+//     for (var row in rows) {
+//       this.medHerbSup.push({ id:rows[row][0], medHerbSup: rows[row][1], uses: rows[row][2], sideEffects: rows[row][3], precautions: rows[row][4], overdose: rows[row][5] });
+                 
+//               }
 
-}
+             
+//               this.med_1= getString("med1");
+              
+//               this.db = db;
 
-extractSelectMovieShow(value) {
-  console.log("this is the extract Selected movieShows")
-  this.myService.getSelectedMovieShow(value)
-      .subscribe((result) => {
-        // console.log("this is the result", result)
-        
-          this.onGetSelectMovieShow(result);
-          
-      }, (error) => {
-          console.log(error);
-      });
-}
-
-private onGetSelectMovieShow(res) {
-  
- 
-
-  for (let key in res.movie_results) {
+//               if(this.medHerbSup.length === 0){
+                
+//                 dialogs.action({
+//                   title: "Interaction error ",
+//                   message: "Sorry! this interactions is not in our system.",
+//                 cancelButtonText: "Ok",
+      
+//                 });}
+//                 else{
+//                   console.log(" getting data was a sucess", this.medHerbSup );
+//                 }
+             
+             
+//   }, error => {
     
-    this.resultSelected.push({value: res});
-  
-    // console.log("resulting in ",this.result2);
-  
-  
-  }
-  
-  
-  
-  
-  
-    }
+//     dialogs.action({
+//       title: "Interaction error ",
+//       message: "Sorry! this interactions is not in our system.",
+//     cancelButtonText: "Ok",
 
-     
+//     });
+//     console.log("SELECT ERROR", error + this.medHerbSup);
+    
+//   });
+// });
+// }
    
     onHomeTap(): void {
         this.routerExtensions.navigate(["/home"]);
