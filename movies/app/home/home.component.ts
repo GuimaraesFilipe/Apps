@@ -17,6 +17,7 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { ActivityIndicator } from "tns-core-modules/ui/activity-indicator";
 import { AnyTxtRecord } from "dns";
 import { getString } from "tns-core-modules/application-settings";
+import { ListViewEventData } from "nativescript-ui-listview";
 
 
 @Component({
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
     suggestions: Array<any> = [];
     filtered: Array<any> = [];
     filtered2: Array<any> = [];
+    SelectedFiltered: Array<any> = [];
     suggest: ObservableArray<TokenModel>;
   	db: any;
     selected: Array<Object> = [];
@@ -57,6 +59,7 @@ export class HomeComponent implements OnInit {
     sumrecovered=0;
     isNotLoggedIn= true;
     isHomepage = true;
+    movie= true;
     red=true;
     green=true;
     orange=true;
@@ -65,6 +68,15 @@ export class HomeComponent implements OnInit {
     isNotSearch= true;
     frame = Frame.getFrameById("myFrame");
     isScan=true;
+  resultUpComing: Array<any> = []; 
+  UpComingImage: Array<any> = []; 
+  filteredUpComing: Array<any> = []; 
+  resultTrendingShows: Array<any> = []; 
+  TrendingShowsImage:Array<any> = []; 
+  filteredTrendingShows: Array<any> = []; 
+  resultRecentlyAdded:Array<any> = []; 
+  RecentlyAddedImage:Array<any> = []; 
+  filteredRecentlyAdded:Array<any> = []; 
 
     
 
@@ -77,7 +89,7 @@ export class HomeComponent implements OnInit {
     
     constructor(private http: HttpClient,private myService: MyHttpGetService2, private routerExtensions: RouterExtensions, private appcomponent: AppComponent) {
 
-
+      
 
        
     } 
@@ -87,7 +99,10 @@ export class HomeComponent implements OnInit {
       
       // this.extractData();
       this.extractOnAir();
+      this.extractTrendingShows();
+      this.extractUpComing();
       this.extractTrendingMovies();
+      this.extractRecentlyAdded();
       // this.selectItems();
     }
   //   extractData() {
@@ -161,16 +176,61 @@ for (let key in res.response) {
 }
 
 extractOnAir() {
-  console.log("this is the extract")
-  this.myService.getOnAir()
-      .subscribe((result) => {
-        // console.log("this is the result", result)
-        
+  // console.log("this is the extract")
+  // this.myService.getOnAir()
+  //     .subscribe((result) => {
+  //       console.log("ON AIR ON AIR ON AIR", result)
+        const result= {  "tv_results": [
+          {
+            "title": "Yowis Ben: The Series",
+            "imdb_id": "tt13039042",
+             "year": "2020"
+           },
+            {
+            "title": "To kafe tis Haras",
+           "imdb_id": "tt0384745",
+            "year": "2003"
+          },
+          {
+            "title": "Bettys Diagnose",
+            "imdb_id": "tt4310426",
+            "year": "2015"
+          },
+           {
+             "title": "Drága örökösök",
+           "imdb_id": "tt9480432",
+           "year": "2019"
+         },
+          {
+             "title": "Haute Dog",
+           "imdb_id": "tt13064206",
+           "year": "2020"
+          },
+         {
+          "title": "The Amber Ruffin Show",
+            "imdb_id": "tt11058078",
+             "year": "2020"
+         },
+          {
+            "title": "Magic of Disney's Animal Kingdom",
+           "imdb_id": "tt10196378",
+          "year": "2020"
+         },
+         {
+           "title": "Zehu Ze",
+           "imdb_id": "tt0077108",
+            "year": "1978"
+          },
+          {
+            "title": "The School Nurse Files",
+            "imdb_id": "tt12879522",
+            "year": "2020"
+          }]}
           this.onGetStatics(result);
           
-      }, (error) => {
-          console.log(error);
-      });
+      // }, (error) => {
+      //     console.log(error);
+      // });
 }
 
 private onGetStatics(res) {
@@ -236,15 +296,35 @@ private onGetStatics(res) {
 
 extractTrendingMovies() {
   console.log("this is the extract Trending Movies")
-  this.myService.getTrendingMovies()
-      .subscribe((result) => {
-        // console.log("this is the result", result)
+  // this.myService.getTrendingMovies()
+  //     .subscribe((result) => {
+        // console.log("TRENDINg TRENDING", result)
+        const result=  {
+          "movie_results": [
         
+           {
+             "title": "Don't Read This On a Plane",
+          "year": "0",
+            "imdb_id": "tt7525792"
+          },
+        
+          {
+            "title": "Brutus Vs César",
+            "year": "2020",
+            "imdb_id": "tt10557524"
+          },
+          {
+            "imdb_id":"tt0423713",
+            "title":"Plus belle la vie",
+            "year":"2004"
+            }
+        ]
+            }        
           this.onGetTrendingMovies(result);
           
-      }, (error) => {
-          console.log(error);
-      });
+      // }, (error) => {
+      //     console.log(error);
+      // });
 }
 
 private onGetTrendingMovies(res) {
@@ -310,11 +390,316 @@ private onGetTrendingMovies(res) {
 
 
 
-      this.random=this.result4[Math.floor( Math.random()*10)].image;
+      this.random=this.result4[Math.floor( Math.random()*2)].image.poster;
       console.log(this.random)
       
         }
      
+        
+extractUpComing() {
+  // console.log("this is the extract")
+  // this.myService.getOnUpComing()
+  //     .subscribe((result) => {
+  //       console.log("ON AIR ON AIR ON AIR", result)
+        const result= {  "movie_results": [{
+          "imdb_id":"tt10648198",
+          "title":"Dime Cuándo Tú",
+          "year":"2020"
+          },
+          {
+            "imdb_id":"tt10687740",
+            "title":"Princezna zakletá v čase",
+            "year":"2020"
+          },
+          {
+          "imdb_id":"tt11622272",
+          "title":"Spring Uje spring",
+          "year":"2020"
+          },
+          {
+            "imdb_id":"tt11354164",
+            "title":"老後の資金がありません",
+            "year":"2020"
+          },
+          {
+            "imdb_id":"tt10431332",
+"title":"Legend Quest: The Origin",
+"year":"2020"
+          },
+          {
+            "imdb_id":"tt11697690",
+"title":"The Woman Who Ran",
+"year":"2020"
+          }]}
+        
+          this.onGetUpComing(result);
+          
+      // }, (error) => {
+      //     console.log(error);
+      // });
+}
+
+private onGetUpComing(res) {
+  
+ 
+
+  for (let key in res.movie_results) {
+    
+    this.resultUpComing.push({value: res.movie_results[key]});
+  
+    // console.log("resulting in ",this.result2);
+  
+  
+  }
+  
+  this.resultUpComing.forEach(obj => {
+    this.extractImageUpComing(obj.value.imdb_id);
+   });
+  
+  
+  
+    }
+    extractImageUpComing(value) {
+
+      this.myService.getImageName(value)
+          .subscribe((result) => {
+            // console.log("this is the image result ", result)
+            
+              this.onGetImageUpComing(result);
+              
+              
+          }, (error) => {
+              console.log(error);
+          });
+    }
+    
+     onGetImageUpComing(res) {
+      
+    
+      for (let key in res) {
+        
+        this.UpComingImage.push({image: res});
+        // console.log("IMAGE REsult ",this.result);
+    
+        this.filteredUpComing= this.UpComingImage.reduce((acc, current) => {
+          const x = acc.find(item => item.image === current.image);
+          if (!x) {
+            return acc.concat([current]);
+          } else {
+            return acc;
+          }
+        }, []);
+    
+        // console.log('filtered', this.filtered);
+     
+        
+        
+      }
+      
+      
+      
+        }
+        extractTrendingShows() {
+          // console.log("this is the extract")
+          // this.myService.getOnTrendingShow()
+          //     .subscribe((result) => {
+          //       console.log("ON AIR ON AIR ON AIR", result)
+                const result= {  "tv_results": [{
+                  "imdb_id":"tt12624844",
+                  "title":"The Great Heist",
+                  "year":"2020"
+                  },
+                  {
+                    "imdb_id":"tt9849210",
+                    "title":"Biohackers",
+                    "year":"2020"
+                  },
+                  {
+                    "imdb_id":"tt10623550",
+                    "title":"The Fugitive",
+                    "year":"2020"
+                  },
+                  {
+                    "imdb_id":"tt6905686",
+                    "title":"Lovecraft Country",
+                    "year":"2020"
+                  },
+                  {
+                    "imdb_id":"tt10584608",
+                    "title":"Teenage Bounty Hunters",
+                    "year":"2020"
+                  },
+                  {
+                    "imdb_id":"tt10986410",
+                    "title":"Ted Lasso",
+                    "year":"2020"
+                  }]}
+                
+                  this.onGetTrendingShows(result);
+                  
+              // }, (error) => {
+              //     console.log(error);
+              // });
+        }
+        
+        private onGetTrendingShows(res) {
+          
+         
+        
+          for (let key in res.tv_results) {
+            
+            this.resultTrendingShows.push({value: res.tv_results[key]});
+          
+            // console.log("resulting in ",this.result2);
+          
+          
+          }
+          
+          this.resultTrendingShows.forEach(obj => {
+            this.extractImageTrendingShows(obj.value.imdb_id);
+           });
+          
+          
+          
+            }
+            extractImageTrendingShows(value) {
+        
+              this.myService.getImageName(value)
+                  .subscribe((result) => {
+                    // console.log("this is the image result ", result)
+                    
+                      this.onGetImageTrendingShows(result);
+                      
+                      
+                  }, (error) => {
+                      console.log(error);
+                  });
+            }
+            
+             onGetImageTrendingShows(res) {
+              
+            
+              for (let key in res) {
+                
+                this.TrendingShowsImage.push({image: res});
+                // console.log("IMAGE REsult ",this.result);
+            
+                this.filteredTrendingShows= this.TrendingShowsImage.reduce((acc, current) => {
+                  const x = acc.find(item => item.image === current.image);
+                  if (!x) {
+                    return acc.concat([current]);
+                  } else {
+                    return acc;
+                  }
+                }, []);
+            
+                // console.log('filtered', this.filtered);
+             
+                
+                
+              }
+              
+              
+              
+                }
+                extractRecentlyAdded() {
+                  // console.log("this is the extract")
+                  // this.myService.getOnRecentlyAdded()
+                  //     .subscribe((result) => {
+                  //       console.log("ON AIR ON AIR ON AIR", result)
+                        const result= {  "tv_results": [{
+                          "imdb_id":"tt10681614",
+                          "title":"The Deceived",
+                          "year":"2020"
+                          },
+                          {
+                            "imdb_id":"tt12753692",
+"title":"Connected: The Hidden Science of Everything",
+"year":"2020"
+                          },
+                          {
+                            "imdb_id":"tt9208876",
+                            "title":"The Falcon and the Winter Soldier",
+                            "year":"2020"
+                          },
+                          {
+                            "imdb_id":"tt10857210",
+"title":"Muppets Now",
+"year":"2020"
+                          },
+                          {
+                            "imdb_id":"tt9789660",
+"title":"Transformers: War for Cybertron Trilogy",
+"year":"2020"
+                          }]}
+                        
+                          this.onGetRecentlyAdded(result);
+                          
+                      // }, (error) => {
+                      //     console.log(error);
+                      // });
+                }
+                
+                private onGetRecentlyAdded(res) {
+                  
+                 
+                
+                  for (let key in res.tv_results) {
+                    
+                    this.resultRecentlyAdded.push({value: res.tv_results[key]});
+                  
+                    // console.log("resulting in ",this.result2);
+                  
+                  
+                  }
+                  
+                  this.resultRecentlyAdded.forEach(obj => {
+                    this.extractImageRecentlyAdded(obj.value.imdb_id);
+                   });
+                  
+                  
+                  
+                    }
+                    extractImageRecentlyAdded(value) {
+                
+                      this.myService.getImageName(value)
+                          .subscribe((result) => {
+                            // console.log("this is the image result ", result)
+                            
+                              this.onGetImageRecentlyAdded(result);
+                              
+                              
+                          }, (error) => {
+                              console.log(error);
+                          });
+                    }
+                    
+                     onGetImageRecentlyAdded(res) {
+                      
+                    
+                      for (let key in res) {
+                        
+                        this.RecentlyAddedImage.push({image: res});
+                        // console.log("IMAGE REsult ",this.result);
+                    
+                        this.filteredRecentlyAdded= this.RecentlyAddedImage.reduce((acc, current) => {
+                          const x = acc.find(item => item.image === current.image);
+                          if (!x) {
+                            return acc.concat([current]);
+                          } else {
+                            return acc;
+                          }
+                        }, []);
+                    
+                        // console.log('filtered', this.filtered);
+                     
+                        
+                        
+                      }
+                      
+                      
+                      
+                        }
 
 
    
@@ -359,9 +744,25 @@ private onGetTrendingMovies(res) {
 //     });
 //    }
 
-selectedSearch() {
-  this.selected = [];
-this.movie_show= getString("movieShow");
+selectedSearchM(args: ListViewEventData) {
+  this.resultSelected = [];
+  this.SelectedFiltered=[];
+  this.movie_show="";
+let selected= <any>args.object.bindingContext;
+this.movie_show=selected.image.id;
+  this.isHomepage = !this.isHomepage;
+ console.log(' got MOvieShow', this.movie_show);
+ this.extractSelectMovieShow(this.movie_show);
+
+}
+
+selectedSearch(args: ListViewEventData) {
+  this.movie=!this.movie;
+  this.resultSelected = [];
+  this.SelectedFiltered=[];
+  this.movie_show="";
+let selected= <any>args.object.bindingContext;
+this.movie_show=selected.image.id;
   this.isHomepage = !this.isHomepage;
  console.log(' got MOvieShow', this.movie_show);
  this.extractSelectMovieShow(this.movie_show);
@@ -385,17 +786,26 @@ private onGetSelectMovieShow(res) {
   
  
 
-  for (let key in res.movie_results) {
+  for (let key in res) {
     
-    this.resultSelected.push({value: res});
+    
+    this.SelectedFiltered.push({value: res});
   
-    // console.log("resulting in ",this.result2);
+    
   
   
   }
+  this.resultSelected= this.SelectedFiltered.reduce((acc, current) => {
+    const x = acc.find(item => item.image === current.image);
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
   
   
-  
+  console.log("resulting in ",this.resultSelected);
   
   
     }
@@ -403,6 +813,7 @@ private onGetSelectMovieShow(res) {
      
    
     onHomeTap(): void {
+      this.movie=!this.movie;
         this.routerExtensions.navigate(["/home"]);
         if(!this.isHomepage){
           this.isHomepage=!this.isHomepage;

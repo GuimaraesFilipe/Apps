@@ -152,6 +152,16 @@ ActionBar {
     border-width: 2;
 }
 
+.share-icon {
+    font-size: 35;
+    color: rgba(196, 170, 3);
+    padding-left: 0;
+    vertical-align: center;
+    text-align: center;
+    margin-left: 10;
+    margin-top: 15;
+}
+
 .menu-icon {
     font-size: 30;
     color: rgba(196, 170, 3);

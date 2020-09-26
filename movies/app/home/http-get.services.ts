@@ -43,6 +43,41 @@ export class MyHttpGetService2 {
         return this.http.get(serverUrl1, { headers: headers});
        
     }
+    getOnUpComing(){
+        const serverUrl1 = "https://movies-tvshows-data-imdb.p.rapidapi.com/?page=1&type=get-upcoming-movies";
+        let headers = this.Header();
+
+        return this.http.get(serverUrl1, { headers: headers});
+       
+    }
+
+    getOnTrendingShow(){
+        const serverUrl1 = "https://movies-tvshows-data-imdb.p.rapidapi.com/?page=1&type=get-trending-shows";
+        let headers = this.Header();
+
+        return this.http.get(serverUrl1, { headers: headers});
+       
+    }
+    getOnRecentlyAdded(){
+        const serverUrl1 = "https://movies-tvshows-data-imdb.p.rapidapi.com/?page=1&type=get-recently-added-shows";
+        let headers = this.Header();
+
+        return this.http.get(serverUrl1, { headers: headers});
+       
+    }
+    getOnSimilarMovies(value){
+        const serverUrl1 = `https://movies-tvshows-data-imdb.p.rapidapi.com/?page=1&imdb=${value}&type=get-similar-movies`;
+        let headers = this.Header();
+
+        return this.http.get(serverUrl1, { headers: headers});
+       
+    }
+    getOnSimilarTvShows(value){
+        const serverUrl1 = `https://movies-tvshows-data-imdb.p.rapidapi.com/?page=1&imdb=${value}&type=get-similar-shows`;
+        let headers = this.Header();
+        return this.http.get(serverUrl1, { headers: headers});
+       
+    }
 
     getImageName(value) {
         // var lower=value.charAt(0).toLowerCase() + value.slice(1);
