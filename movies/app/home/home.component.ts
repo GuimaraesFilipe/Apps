@@ -752,8 +752,20 @@ let selected= <any>args.object.bindingContext;
 this.movie_show=selected.image.id;
   this.isHomepage = !this.isHomepage;
  console.log(' got MOvieShow', this.movie_show);
- this.extractSelectMovieShow(this.movie_show);
+ this.extractSelectMovie(this.movie_show);
 
+}
+extractSelectMovie(value) {
+  console.log("this is the extract Selected movieShows")
+  this.myService.getOnSimilarMovies(value)
+      .subscribe((result) => {
+        // console.log("this is the result", result)
+        
+          this.onGetSelectMovieShow(result);
+          
+      }, (error) => {
+          console.log(error);
+      });
 }
 
 selectedSearch(args: ListViewEventData) {
@@ -765,15 +777,15 @@ let selected= <any>args.object.bindingContext;
 this.movie_show=selected.image.id;
   this.isHomepage = !this.isHomepage;
  console.log(' got MOvieShow', this.movie_show);
- this.extractSelectMovieShow(this.movie_show);
+ this.extractSelectShow(this.movie_show);
 
 }
 
-extractSelectMovieShow(value) {
+extractSelectShow(value) {
   console.log("this is the extract Selected movieShows")
-  this.myService.getSelectedMovieShow(value)
+  this.myService.getOnSimilarTvShows(value)
       .subscribe((result) => {
-        // console.log("this is the result", result)
+        console.log("this is the result", result)
         
           this.onGetSelectMovieShow(result);
           

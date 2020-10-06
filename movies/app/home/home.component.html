@@ -253,7 +253,7 @@
                                 <StackLayout marginRight="10" marginTop="5" (tap)="dismissKeyboard()" *ngIf="!movie" height="70%" marginLeft="20">
                                     <Label text="Similar Tv-Shows" class="text-left"></Label>
 
-                                    <RadListView class="list-group" orientation="horizontal" *ngIf="movie" [items]="result4" height="80%">
+                                    <RadListView class="list-group" orientation="horizontal" *ngIf="!movie" [items]="result4" height="80%">
 
                                         <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal"></ListViewLinearLayout>
 
